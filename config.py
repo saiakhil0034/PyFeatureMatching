@@ -15,3 +15,5 @@ index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
 search_params = dict(checks=num_checks)
 flann = cv2.FlannBasedMatcher(index_params, search_params)
 feature_matcher = flann
+
+ransac_outlier_thresh = 5.0

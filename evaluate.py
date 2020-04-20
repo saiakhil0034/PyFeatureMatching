@@ -57,7 +57,8 @@ if __name__ == "__main__":
                     [kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)
 
                 # estimating homography
-                M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
+                M, mask = cv2.findHomography(
+                    src_pts, dst_pts, cv2.RANSAC, ransac_outlier_thresh)
                 matchesMask = mask.ravel().tolist()
                 print(f" estimated homography :\n{M}\n")
                 real_homog = np.loadtxt(
